@@ -1,16 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="src/index.css" />
+  <title>Weather App with Icons</title>
 </head>
 <body>
-   <h1>Weather</h1> 
-   <footer>Coded by 
-    <a href="https://github.com/">Tinyiko</a> code hosted on 
-    <a href="https://github.com/Nononyiko/nono-work">Github</a> and website hosted on
-    <a href="https://app.netlify.com/teams/nononyiko/projects">Netlify</a>
-</footer>
+  <main class="weather-app">
+    <header>
+      <h2 id="current-date" aria-live="polite" role="status">
+        Loading current time...
+      </h2>
+    </header>
+
+    <form id="search-form" class="search-form" autocomplete="off">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Enter city"
+        aria-label="City name"
+        required
+      />
+      <button type="submit">Submit</button>
+    </form>
+
+    <section class="current-weather" aria-live="polite">
+      <h1 id="current-temperature">
+        <span class="icon temp-icon" aria-hidden="true">🌡️</span>
+        <span id="temp-value"></span>
+      </h1>
+      <p id="weather-description"></p>
+      <p id="current-city">
+        <span id="city-name"></span>
+        <span class="spinner" id="loading-spinner" style="display:none;"></span>
+      </p>
+      <p id="wind-speed">
+        <span class="icon wind-icon" aria-hidden="true">🌬️</span>
+        <span id="wind-value"></span>
+      </p>
+      <img id="weather-icon" alt="" style="display:none; width: 80px; margin-top: 10px;" />
+    </section>
+
+    <footer>
+      Coded by
+      <a href="https://github.com/Nononyiko" target="_blank" rel="noopener noreferrer">Tinyiko</a>, code hosted on
+      <a href="https://github.com/Nononyiko/nono-work" target="_blank" rel="noopener noreferrer">GitHub</a>, and website hosted on
+      <a href="https://app.netlify.com/teams/nononyiko/projects" target="_blank" rel="noopener noreferrer">Netlify</a>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="src/index.js"></script>
 </body>
 </html>

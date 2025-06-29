@@ -1,0 +1,137 @@
+:root {
+  --primary-color: #e312ce;
+  --primary-hover: #d700ba;
+  --background-color: #f0f8ff;
+  --text-color: #333;
+  --secondary-text: #666;
+  --border-color: #ccc;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.weather-app {
+  width: 320px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+}
+
+#current-date {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: var(--secondary-text);
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#search-input {
+  width: 65%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  outline-offset: 2px;
+}
+
+#search-form button {
+  padding: 12px;
+  margin-left: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#search-form button:hover,
+#search-form button:focus {
+  background-color: var(--primary-hover);
+  outline: none;
+}
+
+.current-weather h1 {
+  font-size: 48px;
+  margin: 10px 0;
+  color: var(--primary-hover);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.current-weather p {
+  font-size: 16px;
+  margin: 5px 0;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 24px;
+  user-select: none;
+  line-height: 1;
+}
+
+#current-city {
+  justify-content: center;
+}
+
+/* Spinner next to city name */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px dotted var(--primary-color);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#weather-icon {
+  width: 80px;
+  margin-top: 10px;
+  display: none;
+}
+
+footer {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 10px;
+}
+
+@media (max-width: 400px) {
+  .weather-app {
+    width: 90%;
+  }
+}
